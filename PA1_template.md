@@ -18,7 +18,7 @@ Create a histogram of the total number of steps per day. Calculate and report th
 hist(steps_per_day, xlab = "Range of Steps", ylab = "Number of Times", main = "Steps Per Day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)
 
 ```r
 mean(steps_per_day)
@@ -45,7 +45,7 @@ Activity_Pattern <- data.frame(steps_per_interval)
 plot(Activity_Pattern, type="l", xlab="Intervals (1-288)", ylab="Average # of Steps", main = "Daily Activity Pattern")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)
 On average, the 5-minute interval that contains the maximum number of steps is the 107th interval (835 minutes), at 206.17.
 
 Now, count the number of missing values (NA) in the dataset. The total number of missing values is 2,304.
@@ -72,7 +72,7 @@ new_steps_per_day <- tapply(new_data$steps, new_data$date, sum, na.rm=TRUE)
 hist(new_steps_per_day, xlab = "Range of Steps", ylab = "Number of Times", main = "Steps Per Day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)
 
 ```r
 mean(new_steps_per_day)
@@ -108,4 +108,4 @@ result <- aggregate(steps ~ weekend + interval, new_data, mean)
 xyplot(result$steps ~ result$interval | factor(result$weekend), type="l", xlab="Interval", ylab="Number of Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)
